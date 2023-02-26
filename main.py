@@ -2,13 +2,25 @@ import Crypto_Url
 import csv
 import csv_Writing
 
+
+class bcolors:
+    HEADER = '\033[95m'
+    OKBLUE = '\033[94m'
+    OKCYAN = '\033[96m'
+    OKGREEN = '\033[92m'
+    WARNING = '\033[93m'
+    FAIL = '\033[91m'
+    ENDC = '\033[0m'
+    BOLD = '\033[1m'
+    UNDERLINE = '\033[4m'
+
+
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
 
     url_list = Crypto_Url.url_object()
     count = 0
-
-    #csv_path = '/Users/andrea/Budget Plan/Investimenti/Crypto/CryptoValue.csv'
+    
     csv_path = './CryptoValue.csv'
 
     with open(csv_path, mode='w', newline='') as csv_file:
@@ -22,3 +34,4 @@ if __name__ == '__main__':
             count += 1
 
 
+print(bcolors.OKGREEN + '\nCrypto Value Scraping ended successfully!!!\n' + bcolors.ENDC);
